@@ -1,0 +1,491 @@
+{
+  "info": {
+    "_postman_id": "58fc86ec-5c9a-424f-b331-ed5b2ad5336a",
+    "name": "BankManagement",
+    "description": "### Welcome to Postman! This is your first collection. \n\nCollections are your starting point for building and testing APIs. You can use this one to:\n\n• Group related requests\n• Test your API in real-world scenarios\n• Document and share your requests\n\nUpdate the name and overview whenever you’re ready to make it yours.\n\n[Learn more about Postman Collections.](https://learning.postman.com/docs/collections/collections-overview/)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "58891659",
+    "_collection_link": "https://go.postman.co/collection/58891659-58fc86ec-5c9a-424f-b331-ed5b2ad5336a?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "01 - Creer agence",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"nom\":\"Agence Nord\",\"adresse\":\"5 Rue de Tunis\",\"telephone\":\"21671111111\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/agences",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "agences"
+          ]
+        },
+        "description": "Generated from cURL: curl --request POST --url 'http://localhost:8080/api/agences' --header 'Content-Type: application/json' --data-raw '{\"nom\":\"Agence Nord\",\"adresse\":\"5 Rue de Tunis\",\"telephone\":\"21671111111\"}'"
+      },
+      "response": []
+    },
+    {
+      "name": "02 - Creer client",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"nom\":\"Trabelsi\",\"prenom\":\"Lina\",\"email\":\"lina@mail.com\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/clients",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "clients"
+          ]
+        },
+        "description": "Generated from cURL: curl --request POST --url 'http://localhost:8080/api/clients' --header 'Content-Type: application/json' --data-raw '{\"nom\":\"Trabelsi\",\"prenom\":\"Lina\",\"email\":\"lina@mail.com\"}'"
+      },
+      "response": []
+    },
+    {
+      "name": "03 - Creer compte",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"numero\":\"ACC003\",\"solde\":2000,\"type\":\"COURANT\",\"statut\":\"ACTIF\",\"client\":{\"id\":1},\"agence\":{\"id\":1}}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/comptes",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "comptes"
+          ]
+        },
+        "description": "Generated from cURL: curl --request POST --url 'http://localhost:8080/api/comptes' --header 'Content-Type: application/json' --data-raw '{\"numero\":\"ACC003\",\"solde\":2000,\"type\":\"COURANT\",\"statut\":\"ACTIF\",\"client\":{\"id\":1},\"agence\":{\"id\":1}}'"
+      },
+      "response": []
+    },
+    {
+      "name": "04 - Depot",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8080/api/comptes/1/depot",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "comptes",
+            "1",
+            "depot"
+          ]
+        },
+        "description": "Generated from cURL: curl --request POST --url 'http://localhost:8080/api/comptes/1/depot?montant=500' --header 'Content-Type: application/json'"
+      },
+      "response": []
+    },
+    {
+      "name": "05 - Retrait",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8080/api/comptes/1/retrait",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "comptes",
+            "1",
+            "retrait"
+          ]
+        },
+        "description": "Generated from cURL: curl --request POST --url 'http://localhost:8080/api/comptes/1/retrait?montant=100' --header 'Content-Type: application/json'"
+      },
+      "response": []
+    },
+    {
+      "name": "06 - Virement",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8080/api/comptes/virement",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "comptes",
+            "virement"
+          ]
+        },
+        "description": "Generated from cURL: curl --request POST --url 'http://localhost:8080/api/comptes/virement?source=1&destination=2&montant=50' --header 'Content-Type: application/json'"
+      },
+      "response": []
+    },
+    {
+      "name": "07 - Lire compte",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8080/api/comptes/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "comptes",
+            "1"
+          ]
+        },
+        "description": "Generated from cURL: curl --request GET --url 'http://localhost:8080/api/comptes/1' --header 'Content-Type: application/json'"
+      },
+      "response": []
+    },
+    {
+      "name": "08 - Requete 1 solde superieur",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8080/api/comptes/solde-superieur",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "comptes",
+            "solde-superieur"
+          ]
+        },
+        "description": "Generated from cURL: curl --request GET --url 'http://localhost:8080/api/comptes/solde-superieur?montant=700' --header 'Content-Type: application/json'"
+      },
+      "response": []
+    },
+    {
+      "name": "09 - Requete 2 transactions",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8080/api/comptes/1/transactions",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "comptes",
+            "1",
+            "transactions"
+          ]
+        },
+        "description": "Generated from cURL: curl --request GET --url 'http://localhost:8080/api/comptes/1/transactions' --header 'Content-Type: application/json'"
+      },
+      "response": []
+    },
+    {
+      "name": "10 - Requete 3 prets en attente",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8080/api/prets/en-attente",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "prets",
+            "en-attente"
+          ]
+        },
+        "description": "Generated from cURL: curl --request GET --url 'http://localhost:8080/api/prets/en-attente' --header 'Content-Type: application/json'"
+      },
+      "response": []
+    },
+    {
+      "name": "11 - ERREUR 404 compte inexistant",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8080/api/comptes/999",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "comptes",
+            "999"
+          ]
+        },
+        "description": "Generated from cURL: curl --request GET --url 'http://localhost:8080/api/comptes/999' --header 'Content-Type: application/json'"
+      },
+      "response": []
+    },
+    {
+      "name": "12 - ERREUR 400 solde insuffisant",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8080/api/comptes/1/retrait",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "comptes",
+            "1",
+            "retrait"
+          ]
+        },
+        "description": "Generated from cURL: curl --request POST --url 'http://localhost:8080/api/comptes/1/retrait?montant=99999' --header 'Content-Type: application/json'"
+      },
+      "response": []
+    },
+    {
+      "name": "13 - ERREUR 400 validation",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"nom\":\"\",\"prenom\":\"\",\"email\":\"abc\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/clients",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "clients"
+          ]
+        },
+        "description": "Generated from cURL: curl --request POST --url 'http://localhost:8080/api/clients' --header 'Content-Type: application/json' --data-raw '{\"nom\":\"\",\"prenom\":\"\",\"email\":\"abc\"}'"
+      },
+      "response": []
+    },
+    {
+      "name": "14 - Modifier agence",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"nom\":\"Agence Centrale\",\"adresse\":\"12 Avenue Bourguiba\",\"telephone\":\"21671000000\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/agences/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "agences",
+            "1"
+          ]
+        },
+        "description": "Generated from cURL: curl --request PUT --url 'http://localhost:8080/api/agences/1' --header 'Content-Type: application/json' --data-raw '{\"nom\":\"Agence Centrale\",\"adresse\":\"12 Avenue Bourguiba\",\"telephone\":\"21671000000\"}'"
+      },
+      "response": []
+    },
+    {
+      "name": "15 - Supprimer carte",
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8080/api/cartes/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "cartes",
+            "1"
+          ]
+        },
+        "description": "Generated from cURL: curl --request DELETE --url 'http://localhost:8080/api/cartes/1' --header 'Content-Type: application/json'"
+      },
+      "response": []
+    },
+    {
+      "name": "15a - Creer carte",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"numero\": \"1234567890123456\",\r\n  \"expiration\": \"2030-12-31\",\r\n  \"statut\": \"ACTIVE\",\r\n  \"compte\": {\"id\": 1}\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/cartes",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "cartes"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
